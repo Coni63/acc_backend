@@ -23,8 +23,8 @@ urlpatterns = [
     # application endpoints
     path('', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    path('api/fuel/', include('fuel.urls')),
-    path('api/ratings/', include('ratings.urls')),
+    path('fuel/', include('fuel.urls')),
+    path('ratings/', include('ratings.urls')),
 
     # rest_framework_jwt endpoints
     # path('auth/api-token-auth/', obtain_jwt_token),  # not required as it is provided with django-rest-auth login

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from rest_framework.permissions import AllowAny
 from rest_framework.generics import ListAPIView
 
 
@@ -8,6 +9,7 @@ from .serializers import CarSerializer, ConsumptionSerializer, TrackSerializer
 
 
 class ConsumptionList(ListAPIView):
+    permission_classes = [AllowAny]
     serializer_class = ConsumptionSerializer
 
     def get_queryset(self):
@@ -27,10 +29,12 @@ class ConsumptionList(ListAPIView):
 
 
 class CarList(ListAPIView):
+    permission_classes = [AllowAny]
     queryset = Car.objects.all()
     serializer_class = CarSerializer
 
 
 class TrackList(ListAPIView):
+    permission_classes = [AllowAny]
     queryset = Track.objects.all()
     serializer_class = TrackSerializer
