@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Track, Car, Consumption
-# Register your models here.
+from .domain.car import Car
+from .domain.track import Track
+from .domain.consumption import  Consumption, CustomConsumption
 
 @admin.register(Track)
 class TrackAdmin(admin.ModelAdmin):
@@ -15,3 +16,8 @@ class CarAdmin(admin.ModelAdmin):
 @admin.register(Consumption)
 class ConsumptionAdmin(admin.ModelAdmin):
     list_display = ("track", "car", "fuel")
+
+
+@admin.register(CustomConsumption)
+class ConsumptionAdmin(admin.ModelAdmin):
+    list_display = ("user", "track", "car", "fuel")
