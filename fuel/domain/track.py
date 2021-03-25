@@ -7,7 +7,8 @@ class Track(models.Model):
     country = models.CharField(max_length = 200) 
     distance = models.PositiveSmallIntegerField() 
     turns = models.PositiveSmallIntegerField()
-    lap_time = models.FloatField()
+    lap_time_gt3 = models.FloatField(default=0)
+    lap_time_gt4 = models.FloatField(default=0)
 
     def __str__(self):
         return self.name

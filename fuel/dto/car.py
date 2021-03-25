@@ -6,4 +6,4 @@ from ..domain.car import Car
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = ('id', 'name', 'brand')
+        fields = ('id', 'name', 'brand', 'category')

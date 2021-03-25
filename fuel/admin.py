@@ -5,12 +5,12 @@ from .domain.consumption import  Consumption, CustomConsumption
 
 @admin.register(Track)
 class TrackAdmin(admin.ModelAdmin):
-    list_display = ("name", "country", "distance", "turns", "lap_time")
+    list_display = ("name", "country", "distance", "turns", "lap_time_gt3", "lap_time_gt4")
 
 
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
-    list_display = ("name", "brand")
+    list_display = ("name", "brand", "category")
 
 
 @admin.register(Consumption)
